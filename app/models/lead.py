@@ -11,6 +11,7 @@ class LeadInput(BaseModel):
     cargo: str
     mensagem: Optional[str]
 
+
 # Pydantic model for the lead output (Lead Output)
 class LeadOutput(BaseModel):
     nome: str
