@@ -1,7 +1,7 @@
 from fastapi.responses import JSONResponse
 from fastapi import FastAPI, Request
 import uvicorn
-
+from models.lead import LeadInput, LeadOutput
 
 app = FastAPI(title="AI Lead Classification API", description="API for classifying leads using an AI model.", version="1.0.0")
 
@@ -34,7 +34,6 @@ def classify_lead(lead: LeadInput):
     
     Arguments:
     - lead (LeadInput): A dictionary containing the lead's information.
-
     Returns:
     - A JSON response with the classification result.
     """
@@ -59,5 +58,5 @@ def classify_lead(lead: LeadInput):
 
 # If this script is being run directly (e.g., python main.py), start the server
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
 
